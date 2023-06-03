@@ -4,11 +4,14 @@ from transformers import pipeline
 # def summarizeText(summarizer, txt):
 #     summarized_text = summarizer(txt)[0]["summary_text"]
 #     return summarized_text
+@st.cache
+def load_summarizer():
+    return pipeline("summarization", model = "jasonsurya0/BART_TWELVE")
 
 def main():
     st.set_page_config(page_title="Automatic Text Summarizer With BART")
     # BART MODEL DEVELOPED 
-    summarizer = pipeline("summarization", model = "jasonsurya0/BART_TWELVE")
+    summarizer = load_summarizer()
     # ----HEADER
     st.subheader("Text Summarizer Built With BART")
 
