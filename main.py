@@ -20,6 +20,7 @@ def main():
         ''', height = 180)
 
     if st.button('Summarize'):
+        st.write("TEST")
         #st.write(summarizeText(summarizer, txt))
         #st.text_area('Summarized Text', summarizeText(summarizer, txt), height = 140)
 
