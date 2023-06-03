@@ -4,7 +4,7 @@ from transformers import pipeline
 # def summarizeText(summarizer, txt):
 #     summarized_text = summarizer(txt)[0]["summary_text"]
 #     return summarized_text
-@st.cache
+@st.cache(ttl=60)
 def load_summarizer():
     return pipeline("summarization", model = "jasonsurya0/BART_TWELVE")
 
